@@ -6,6 +6,7 @@
 
 <body>
     <center>
+
         <form action="<?= base_url('matakuliah/cetak'); ?>" method="post">
             <table>
                 <tr>
@@ -51,6 +52,7 @@
                 </tr>
             </table>
         </form>
+        <font color ='red'><?php echo validation_errors(); ?></font>
     </center>
 </body>
 
