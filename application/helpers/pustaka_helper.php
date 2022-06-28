@@ -9,10 +9,21 @@ function cek_login()
         if ($ci->session->userdata('role_id') == 1) {
             redirect('Autentifikasi');
         } else {
-            redirect('home');
+            redirect('Admin');
         }
     } else {
         $role_id = $ci->session->userdata('role_id');
         $id_user = $ci->session->userdata('id_user');
+    }
+}
+
+function cek_user()
+{
+    $ci = get_instance();
+    $role_id = $ci->session->userdata('role_id');
+    if ($role_id != 1) 
+    {
+        $ci->session->set_flashdata('pesan', '<div class="alert alertdanger" role="alert">Akses tidak diizinkan </div>');
+        redirect('Admin');
     }
 }

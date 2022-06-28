@@ -8,7 +8,7 @@ class Autentifikasi extends CI_Controller
         
         //jika statusnya sudah login, maka tidak bisa mengakses halaman login alias dikembalikan ke tampilan user
         if($this->session->userdata('email')){
-            redirect('user');
+            redirect('admin');
         }
         
         $this->form_validation->set_rules('email', 'Alamat Email', 'required|trim|valid_email', [ 
@@ -142,10 +142,7 @@ class Autentifikasi extends CI_Controller
 
     public function logout()
     {
-        $this->session->unset_userdata('email');
-        $this->session->unset_userdata('role_id');
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Anda telah logout!!</div>');
-        redirect('Autentifikasi');
+        redirect('autentifikasi/index');
     }
 
 

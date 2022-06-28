@@ -25,8 +25,8 @@
                             <div class="text-md font-weight-bold text-white text-uppercase mb-1">Stok Buku Terdaftar</div>
                             <div class="h1 mb-0 font-weight-bold text-white">
                                 <?php
-                                $where = ['stok != 0'];
-                                $totalstok = $this->ModelBuku->total('stok', $where);
+                                $where = ['stock != 0'];
+                                $totalstok = $this->ModelBuku->total('stock', $where);
                                 echo $totalstok;
                                 ?>
                             </div>
@@ -134,7 +134,7 @@
                             <th>Penerbit</th>
                             <th>Tahun Terbit</th>
                             <th>ISBN</th>
-                            <th>Stok</th>
+                            <th>Stock</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -148,7 +148,7 @@
                                 <td><?= $b['penerbit']; ?></td>
                                 <td><?= $b['tahun_terbit']; ?></td>
                                 <td><?= $b['isbn']; ?></td>
-                                <td><?= $b['stok']; ?></td>
+                                <td><?= $b['stock']; ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
